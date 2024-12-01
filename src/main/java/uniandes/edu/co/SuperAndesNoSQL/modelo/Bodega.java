@@ -18,7 +18,7 @@ public class Bodega {
     {;}
 
     public Bodega(Integer id, String nombre, Integer tamaniom2,
-            uniandes.edu.co.SuperAndesNoSQL.modelo.InfoExtraBodega infoExtraBodega) {
+            InfoExtraBodega infoExtraBodega) {
         this.id = id;
         this.nombre = nombre;
         this.tamaniom2 = tamaniom2;
