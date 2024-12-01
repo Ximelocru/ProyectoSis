@@ -7,13 +7,13 @@ public class InfoExtraBodega {
 
     private Producto idProducto;
     private Integer cantidad;
-    private Integer costoUnitarioCompra;
+    private Double costoUnitarioCompra;
     private DetalleCostoBodega detalleCostoBodega;
 
     public InfoExtraBodega()
     {;}    
 
-    public InfoExtraBodega(Producto idProducto, Integer cantidad, Integer costoUnitarioCompra, DetalleCostoBodega detalleCostoBodega) {
+    public InfoExtraBodega(Producto idProducto, Integer cantidad, Double costoUnitarioCompra, DetalleCostoBodega detalleCostoBodega) {
         this.idProducto = idProducto;
         this.cantidad = cantidad;
         this.costoUnitarioCompra = costoUnitarioCompra;
@@ -31,10 +31,10 @@ public class InfoExtraBodega {
     public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
-    public Integer getCostoUnitarioCompra() {
+    public Double getCostoUnitarioCompra() {
         return costoUnitarioCompra;
     }
-    public void setCostoUnitarioCompra(Integer costoUnitarioCompra) {
+    public void setCostoUnitarioCompra(Double costoUnitarioCompra) {
         this.costoUnitarioCompra = costoUnitarioCompra;
     }
 

@@ -12,7 +12,7 @@ public class Bodega {
     private Integer id;
     private String nombre;
     private Integer tamaniom2;
-    private InfoExtraBodega InfoExtraBodega;
+    private InfoExtraBodega infoExtraBodega;
 
     public Bodega()
     {;}
@@ -22,7 +22,7 @@ public class Bodega {
         this.id = id;
         this.nombre = nombre;
         this.tamaniom2 = tamaniom2;
-        InfoExtraBodega = infoExtraBodega;
+        this.infoExtraBodega = infoExtraBodega;
     }
     public Integer getId() {
         return id;
@@ -43,10 +43,10 @@ public class Bodega {
         this.tamaniom2 = tamaniom2;
     }
     public InfoExtraBodega getInfoExtraBodega() {
-        return InfoExtraBodega;
+        return infoExtraBodega;
     }
     public void setInfoExtraBodega(InfoExtraBodega infoExtraBodega) {
-        InfoExtraBodega = infoExtraBodega;
+        this.infoExtraBodega = infoExtraBodega;
     }
 
 }
