@@ -1,4 +1,4 @@
-package uniandes.edu.co.SuperAndesNoSQL.Controller;
+package uniandes.edu.co.SuperAndesNoSQL.controller;
 
 import java.util.List;
 import java.util.Map;
