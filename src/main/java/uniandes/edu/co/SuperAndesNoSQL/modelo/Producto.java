@@ -1,17 +1,16 @@
 package uniandes.edu.co.SuperAndesNoSQL.modelo;
 
 import java.util.Date;
-
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import lombok.ToString;
 
 @ToString
 @Document(collection="productos")
 
 public class Producto {
     @Id
+    private String id;
     private Integer codBarras;
     private String nombre;
     private Integer precioUnitarioVenta;
@@ -40,6 +39,10 @@ public class Producto {
     public Integer getCodBarras() {
         return codBarras;
     }
+    public String getId() {
+        return id;
+    }
+
 
     public void setCodBarras(Integer codBarras) {
         this.codBarras = codBarras;
