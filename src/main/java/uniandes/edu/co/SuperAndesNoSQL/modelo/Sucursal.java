@@ -12,7 +12,7 @@ import lombok.ToString;
 public class Sucursal {
 
     @Id
-    private Integer id;
+    private String id;
     private String nombre;
     private Integer tamanio;
     private String direccion;
@@ -26,7 +26,7 @@ public class Sucursal {
     public Sucursal()
     {;}
     
-    public Sucursal(Integer id, String nombre, Integer tamanio, String direccion, String telefono, Proveedor proveedor,
+    public Sucursal(String id, String nombre, Integer tamanio, String direccion, String telefono, Proveedor proveedor,
             Bodega bodega, List<OrdenCompra> ordenesCompra, List<InfoExtraOrden> infoExtraOrden, Ciudad ciudad) {
         this.id = id;
         this.nombre = nombre;
@@ -39,10 +39,10 @@ public class Sucursal {
         this.infoExtraOrden = infoExtraOrden;
         this.ciudad = ciudad;
     }
-    public Integer getId() {
+    public String getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
     public String getNombre() {
