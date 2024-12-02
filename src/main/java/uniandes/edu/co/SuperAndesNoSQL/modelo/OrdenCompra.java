@@ -11,13 +11,13 @@ public class OrdenCompra {
     private Date fechaCreacion;
     private String estado;
     private Date fechaEntrega;
-    private List<Integer> productos;
+    private List<String> productos;
     private List<RecepcionProductos> recepcionProductos;
 
     public OrdenCompra()
     {;}
     
-    public OrdenCompra(Date fechaCreacion, String estado, Date fechaEntrega, List<Integer> productos,
+    public OrdenCompra(Date fechaCreacion, String estado, Date fechaEntrega, List<String> productos,
             List<RecepcionProductos> recepcionProductos) {
         this.fechaCreacion = fechaCreacion;
         this.estado = estado;
@@ -43,10 +43,10 @@ public class OrdenCompra {
     public void setFechaEntrega(Date fechaEntrega) {
         this.fechaEntrega = fechaEntrega;
     }
-    public List<Integer> getProducto() {
+    public List<String> getProducto() {
         return productos;
     }
-    public void setProducto(List<Integer> productos) {
+    public void setProducto(List<String> productos) {
         this.productos = productos;
     }
     public List<RecepcionProductos> getRecepcionProductos() {

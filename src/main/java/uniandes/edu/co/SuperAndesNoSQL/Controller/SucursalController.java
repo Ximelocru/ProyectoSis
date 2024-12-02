@@ -26,7 +26,7 @@ public class SucursalController {
     private SucursalRepository sucursalRepository;
 
     @PostMapping("/{sucursalId}/ordencompra")
-    public ResponseEntity<String> agregarOrdenDeCompra(@PathVariable Integer sucursalId,@RequestBody Map<String, Object> requestBody) {
+    public ResponseEntity<String> agregarOrdenDeCompra(@PathVariable String sucursalId,@RequestBody Map<String, Object> requestBody) {
 
     OrdenCompra ordenCompra = objectMapper.convertValue(requestBody.get("ordenCompra"), OrdenCompra.class);
 

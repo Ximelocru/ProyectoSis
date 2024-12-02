@@ -5,22 +5,22 @@ import lombok.ToString;
 @ToString
 public class InfoExtraOrden {
 
-    private Producto producto;
+    private String producto;
     private Integer cantidad;
-    private Double costoUnitarioCompra;
+    private Integer costoUnitarioCompra;
 
     public InfoExtraOrden()
     {;}
 
-    public InfoExtraOrden(Producto producto, Integer cantidad, Double costoUnitarioCompra) {
+    public InfoExtraOrden(String producto, Integer cantidad, Integer costoUnitarioCompra) {
         this.producto = producto;
         this.cantidad = cantidad;
         this.costoUnitarioCompra = costoUnitarioCompra;
     }
-    public Producto getProducto() {
+    public String getProducto() {
         return producto;
     }
-    public void setProducto(Producto producto) {
+    public void setProducto(String producto) {
         this.producto = producto;
     }
     public Integer getCantidad() {
@@ -29,10 +29,10 @@ public class InfoExtraOrden {
     public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
-    public Double getCostoUnitarioCompra() {
+    public Integer getCostoUnitarioCompra() {
         return costoUnitarioCompra;
     }
-    public void setCostoUnitarioCompra(Double costoUnitarioCompra) {
+    public void setCostoUnitarioCompra(Integer costoUnitarioCompra) {
         this.costoUnitarioCompra = costoUnitarioCompra;
     }
     
