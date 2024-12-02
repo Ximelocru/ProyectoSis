@@ -14,7 +14,7 @@ public interface ProductoRepository extends MongoRepository<Producto, String> {
 
     // Consulta personalizada: Buscar producto por código de barras
     @Query("{ 'codBarras': ?0 }")
-    Producto buscarPorCodigoBarras(Integer codBarras);
+    Producto buscarPorCodBarras(Integer codBarras);
 
     // Consulta personalizada: Buscar productos por categoría
     @Query("{ 'nombre': ?0 }")
