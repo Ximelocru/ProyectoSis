@@ -1,6 +1,8 @@
 package uniandes.edu.co.SuperAndesNoSQL.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import uniandes.edu.co.SuperAndesNoSQL.modelo.Producto;
 import uniandes.edu.co.SuperAndesNoSQL.repositorios.ProductoRepository;
+import uniandes.edu.co.SuperAndesNoSQL.repositorios.ProductoRepositoryCustom;
 
 
 
@@ -18,6 +21,8 @@ public class ProductoController {
     @Autowired
     private ProductoRepository productoRepository;
 
+    @Autowired
+    private ProductoRepositoryCustom productoRepositoryCustom;
     // Crear un nuevo producto
     @PostMapping("/new")
     public ResponseEntity<String> crearProducto(@RequestBody Producto producto) {
@@ -77,6 +82,31 @@ public class ProductoController {
             return new ResponseEntity<>("Bar actualizado exitosamente", HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>("Error al actualizar el bar: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @GetMapping("/filtrar")
+    public ResponseEntity<List<Producto>> filtrarProductos(
+            @RequestParam(required = false) Integer precioMin,
+            @RequestParam(required = false) Integer precioMax,
+            @RequestParam(required = false) String fechaVencimiento,
+            @RequestParam(required = false) Integer categoriaId) {
+        try {
+            Date fecha = null;
+            if (fechaVencimiento != null) {
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                fecha = formatter.parse(fechaVencimiento);
+            }
+
+            List<Producto> productos = productoRepositoryCustom.buscarPorCaracteristicas(
+                    precioMin,
+                    precioMax,
+                    fecha,
+                    categoriaId
+            );
+
+            return ResponseEntity.ok(productos);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
