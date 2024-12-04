@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import uniandes.edu.co.SuperAndesNoSQL.modelo.Producto;
-import uniandes.edu.co.SuperAndesNoSQL.repositorios.CategoriaRepository;
 import uniandes.edu.co.SuperAndesNoSQL.repositorios.ProductoRepository;
 
 
@@ -19,14 +18,11 @@ public class ProductoController {
     @Autowired
     private ProductoRepository productoRepository;
 
-    @Autowired
-    private CategoriaRepository categoriaRepository;
-
     // Crear un nuevo producto
     @PostMapping("/new")
     public ResponseEntity<String> crearProducto(@RequestBody Producto producto) {
         try {
-            if (productoRepository.existsById(producto.getId())) {
+            if (productoRepository.buscarPorCodBarras(producto.getId())!= null) {
                 return new ResponseEntity<>("El ID del producto ya existe", HttpStatus.BAD_REQUEST);
             }
             if (productoRepository.buscarPorCodBarras(producto.getCodBarras()) != null) {

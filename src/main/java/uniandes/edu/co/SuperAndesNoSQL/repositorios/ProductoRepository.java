@@ -20,6 +20,9 @@ public interface ProductoRepository extends MongoRepository<Producto, String> {
     @Query("{ 'nombre': ?0 }")
     List<Producto> buscarPorNombre(String nombre);
 
+    @Query("{ '_id': ?0 }")
+    List<Producto> buscarPorId(int id);
+
     //Actualizacion
     @Query("{codBarras:?0 }")
     @Update("{ $set: {nombre:?1, precioUnitarioVenta:?2, presentacion:?3, cantidadPresentacio: ?4, unidadMedia:?5, fechaExpiracion:?6, id_expecificacionesEmpacado:?7, id_categoria:?8 }}")

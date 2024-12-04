@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class Producto {
     @Id
-    private String id;
+    private int id;
     private Integer codBarras;
     private String nombre;
     private Integer precioUnitarioVenta;
@@ -39,7 +39,7 @@ public class Producto {
     public Integer getCodBarras() {
         return codBarras;
     }
-    public String getId() {
+    public int getId() {
         return id;
     }
 
