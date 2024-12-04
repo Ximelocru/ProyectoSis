@@ -28,7 +28,7 @@ public class BodegaController {
             return new ResponseEntity<>("Error al eliminar la Bodega: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    @PostMapping("/new")
+    @PostMapping("/new/save")
     public ResponseEntity<String> crearBodega(@RequestBody Bodega bodega) {
         try {
             if (bodegaRepository.buscarPorId(bodega.getId())!= null) {

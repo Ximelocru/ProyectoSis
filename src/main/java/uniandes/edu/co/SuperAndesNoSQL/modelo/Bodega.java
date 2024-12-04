@@ -1,5 +1,6 @@
 package uniandes.edu.co.SuperAndesNoSQL.modelo;
 
+import java.util.List;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,13 +13,13 @@ public class Bodega {
     private String id;
     private String nombre;
     private Integer tamaniom2;
-    private InfoExtraBodega infoExtraBodega;
+    private List<InfoExtraBodega> infoExtraBodega;
 
     public Bodega()
     {;}
 
     public Bodega(String id, String nombre, Integer tamaniom2,
-            InfoExtraBodega infoExtraBodega) {
+            List<InfoExtraBodega> infoExtraBodega) {
         this.id = id;
         this.nombre = nombre;
         this.tamaniom2 = tamaniom2;
@@ -42,10 +43,10 @@ public class Bodega {
     public void setTamaniom2(Integer tamaniom2) {
         this.tamaniom2 = tamaniom2;
     }
-    public InfoExtraBodega getInfoExtraBodega() {
+    public List<InfoExtraBodega> getInfoExtraBodega() {
         return infoExtraBodega;
     }
-    public void setInfoExtraBodega(InfoExtraBodega infoExtraBodega) {
+    public void setInfoExtraBodega(List<InfoExtraBodega> infoExtraBodega) {
         this.infoExtraBodega = infoExtraBodega;
     }
 
