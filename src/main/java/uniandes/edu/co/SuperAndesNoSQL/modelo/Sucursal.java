@@ -1,11 +1,9 @@
 package uniandes.edu.co.SuperAndesNoSQL.modelo;
 
 import java.util.List;
-
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import lombok.ToString;
 
 @ToString
 @Document(collection="sucursales")
@@ -18,7 +16,7 @@ public class Sucursal {
     private String direccion;
     private String telefono;
     private Integer Proveedor;
-    private Bodega bodega;
+    private String Bodega;
     private List<OrdenCompra> ordenesCompra;
     private List<InfoExtraOrden> infoExtraOrden;
     private Ciudad ciudad;
@@ -27,14 +25,14 @@ public class Sucursal {
     {;}
     
     public Sucursal(String id, String nombre, Integer tamanio, String direccion, String telefono, Integer Proveedor,
-            Bodega bodega, List<OrdenCompra> ordenesCompra, List<InfoExtraOrden> infoExtraOrden, Ciudad ciudad) {
+            String bodega, List<OrdenCompra> ordenesCompra, List<InfoExtraOrden> infoExtraOrden, Ciudad ciudad) {
         this.id = id;
         this.nombre = nombre;
         this.tamanio = tamanio;
         this.direccion = direccion;
         this.telefono = telefono;
         this.Proveedor = Proveedor;
-        this.bodega = bodega;
+        this.Bodega = bodega;
         this.ordenesCompra = ordenesCompra;
         this.infoExtraOrden = infoExtraOrden;
         this.ciudad = ciudad;
@@ -75,11 +73,11 @@ public class Sucursal {
     public void setProveedor(Integer Proveedor) {
         this.Proveedor = Proveedor;
     }
-    public Bodega getBodega() {
-        return bodega;
+    public String getBodega() {
+        return Bodega;
     }
-    public void setBodega(Bodega bodega) {
-        this.bodega = bodega;
+    public void setBodega(String bodega) {
+        this.Bodega = bodega;
     }
     public List<OrdenCompra> getOrdenCompra() {
         return ordenesCompra;

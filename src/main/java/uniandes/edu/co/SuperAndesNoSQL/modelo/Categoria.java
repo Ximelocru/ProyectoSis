@@ -1,11 +1,15 @@
 package uniandes.edu.co.SuperAndesNoSQL.modelo;
 
-
 import lombok.ToString;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @ToString
+@Document(collection="categorias")
 
 public class Categoria {
+    @Id
+    private int id;
     private Integer codigo;
     private String nombre;
     private String descripcion;
@@ -35,6 +39,9 @@ public class Categoria {
     }
 
     public Integer getCodigo() {
+        return codigo;
+    }
+    public int getId() {
         return codigo;
     }
 
