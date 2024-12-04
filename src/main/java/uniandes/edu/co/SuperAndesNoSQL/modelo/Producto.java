@@ -19,12 +19,12 @@ public class Producto {
     private Integer unidadMedia;
     private Date fechaExpiracion;
     private EspecificacionesEmpacado id_expecificacionesEmpacado;
-    private Categoria id_categoria;
+    private Integer id_categoria;
     public Producto()
     {;}
 
     public Producto(String nombre, Integer precioUnitarioVenta, String presentacion,Integer cantidadPresentacio, Integer unidadMedia, Date fechaExpiracion, 
-    EspecificacionesEmpacado id_expecificacionesEmpacado, Categoria id_categoria ) {
+    EspecificacionesEmpacado id_expecificacionesEmpacado, Integer id_categoria ) {
         this.nombre = nombre;
         this.precioUnitarioVenta = precioUnitarioVenta;
         this.presentacion= presentacion;
@@ -104,11 +104,11 @@ public class Producto {
         this.id_expecificacionesEmpacado = id_expecificacionesEmpacado;
     }
 
-    public Categoria getId_categoria() {
+    public Integer getId_categoria() {
         return id_categoria;
     }
 
-    public void setId_categoria(Categoria id_categoria) {
+    public void setId_categoria(Integer id_categoria) {
         this.id_categoria = id_categoria;
     }
 

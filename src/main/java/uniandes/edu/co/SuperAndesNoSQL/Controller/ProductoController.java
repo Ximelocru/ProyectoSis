@@ -31,27 +31,28 @@ public class ProductoController {
             productoRepository.save(producto);
             return new ResponseEntity<>("Producto creado exitosamente", HttpStatus.CREATED);
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity<>("Error al crear el producto: " + e.getMessage(),
                     HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
   
 
-    @GetMapping("/codbarras/{codigoBarras}")
-    public ResponseEntity<Producto> obtenerProductoPorCodigoBarras(@PathVariable Integer codigoBarras) {
+    @GetMapping("/consulta/codBarras")
+    public ResponseEntity<Producto> obtenerProductoPorCodigoBarras(@RequestParam Integer codBarras) {
         try {
-            Producto producto = productoRepository.buscarPorCodBarras(codigoBarras);
+            Producto producto = productoRepository.buscarPorCodBarras(codBarras);
             if (producto != null) {
                 return ResponseEntity.ok(producto);
             } else {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+            return ResponseEntity.status( HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
-    @GetMapping("/nombre/{nombre}")
-    public ResponseEntity<Collection<Producto>> obtenerProductoPorNombre(@PathVariable String nombre) {
+    @GetMapping("/consulta/nombre")
+    public ResponseEntity<Collection<Producto>> obtenerProductoPorNombre(@RequestParam String nombre) {
         try {
             List<Producto> producto = productoRepository.buscarPorNombre(nombre);
             return ResponseEntity.ok(producto);
