@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import uniandes.edu.co.SuperAndesNoSQL.modelo.Categoria;
 import uniandes.edu.co.SuperAndesNoSQL.modelo.InfoExtraOrden;
 import uniandes.edu.co.SuperAndesNoSQL.modelo.OrdenCompra;
 import uniandes.edu.co.SuperAndesNoSQL.modelo.Sucursal;
@@ -88,5 +89,20 @@ public class SucursalController {
             return ResponseEntity.status(500).body(null);
         }
     }
+    @PostMapping("/new")
+    public ResponseEntity<String> crearSucursal(@RequestBody Sucursal sucursal) {
+        try {
+            if (sucursalRepository.buscarPorId(sucursal.getId())!= null) {
+                return new ResponseEntity<>("El ID de la sucursal ya existe", HttpStatus.BAD_REQUEST);
+            }
+            sucursalRepository.save(sucursal);
+            return new ResponseEntity<>("Sucursal creada exitosamente", HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error al crear la categoría: " + e.getMessage(),
+                    HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
 
 }
