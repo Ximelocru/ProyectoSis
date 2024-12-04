@@ -1,15 +1,15 @@
 package uniandes.edu.co.SuperAndesNoSQL.modelo;
 
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import lombok.ToString;
 
 @ToString
 @Document(collection="bodegas")
 public class Bodega {
 
     @Id
-    private Integer id;
+    private String id;
     private String nombre;
     private Integer tamaniom2;
     private InfoExtraBodega infoExtraBodega;
@@ -17,17 +17,17 @@ public class Bodega {
     public Bodega()
     {;}
 
-    public Bodega(Integer id, String nombre, Integer tamaniom2,
+    public Bodega(String id, String nombre, Integer tamaniom2,
             InfoExtraBodega infoExtraBodega) {
         this.id = id;
         this.nombre = nombre;
         this.tamaniom2 = tamaniom2;
         this.infoExtraBodega = infoExtraBodega;
     }
-    public Integer getId() {
+    public String getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
     public String getNombre() {
