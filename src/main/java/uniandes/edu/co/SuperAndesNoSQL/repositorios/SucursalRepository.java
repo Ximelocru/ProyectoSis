@@ -18,6 +18,7 @@ public interface SucursalRepository extends MongoRepository<Sucursal, String> {
     @Update("{ '$push': { 'ordenesCompra': ?1, 'infoExtraOrden': { $each: ?2 } } }")
     void agregarOrdenDeCompra(String sucursalId, OrdenCompra ordenCompra, List<InfoExtraOrden> infoExtraOrden); 
 
-       
+    @Query("{ 'OrdenesCompra.id': ?0 }")
+    Sucursal findByOrdenCompraId(Integer ordenCompraId);
 }
     

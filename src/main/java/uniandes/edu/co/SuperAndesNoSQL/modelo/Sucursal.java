@@ -17,7 +17,7 @@ public class Sucursal {
     private Integer tamanio;
     private String direccion;
     private String telefono;
-    private Proveedor proveedor;
+    private Integer Proveedor;
     private Bodega bodega;
     private List<OrdenCompra> ordenesCompra;
     private List<InfoExtraOrden> infoExtraOrden;
@@ -26,14 +26,14 @@ public class Sucursal {
     public Sucursal()
     {;}
     
-    public Sucursal(String id, String nombre, Integer tamanio, String direccion, String telefono, Proveedor proveedor,
+    public Sucursal(String id, String nombre, Integer tamanio, String direccion, String telefono, Integer Proveedor,
             Bodega bodega, List<OrdenCompra> ordenesCompra, List<InfoExtraOrden> infoExtraOrden, Ciudad ciudad) {
         this.id = id;
         this.nombre = nombre;
         this.tamanio = tamanio;
         this.direccion = direccion;
         this.telefono = telefono;
-        this.proveedor = proveedor;
+        this.Proveedor = Proveedor;
         this.bodega = bodega;
         this.ordenesCompra = ordenesCompra;
         this.infoExtraOrden = infoExtraOrden;
@@ -69,11 +69,11 @@ public class Sucursal {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    public Proveedor getProveedor() {
-        return proveedor;
+    public Integer getProveedor() {
+        return Proveedor;
     }
-    public void setProveedor(Proveedor proveedor) {
-        this.proveedor = proveedor;
+    public void setProveedor(Integer Proveedor) {
+        this.Proveedor = Proveedor;
     }
     public Bodega getBodega() {
         return bodega;

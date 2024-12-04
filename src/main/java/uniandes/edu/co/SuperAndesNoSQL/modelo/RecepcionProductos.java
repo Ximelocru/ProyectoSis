@@ -7,21 +7,21 @@ import lombok.ToString;
 @ToString
 public class RecepcionProductos {
 
-    private Bodega bodega;
+    private String Bodega;
     private Date fechaRecepcion;
 
     public RecepcionProductos()
     {;}
 
-    public RecepcionProductos(Bodega bodega, Date fechaRecepcion) {
-        this.bodega = bodega;
+    public RecepcionProductos(String Bodega, Date fechaRecepcion) {
+        this.Bodega = Bodega;
         this.fechaRecepcion = fechaRecepcion;
     }
-    public Bodega getBodega() {
-        return bodega;
+    public String getBodega() {
+        return Bodega;
     }
-    public void setBodega(Bodega bodega) {
-        this.bodega = bodega;
+    public void setBodega(String Bodega) {
+        this.Bodega = Bodega;
     }
     public Date getFechaRecepcion() {
         return fechaRecepcion;

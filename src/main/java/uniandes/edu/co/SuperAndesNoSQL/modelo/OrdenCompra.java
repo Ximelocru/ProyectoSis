@@ -8,22 +8,24 @@ import lombok.ToString;
 @ToString
 public class OrdenCompra {
 
+    private Integer id;
     private Date fechaCreacion;
     private String estado;
     private Date fechaEntrega;
     private List<String> productos;
-    private List<RecepcionProductos> recepcionProductos;
+    private List<RecepcionProductos> RecepcionProductos;
 
     public OrdenCompra()
     {;}
     
-    public OrdenCompra(Date fechaCreacion, String estado, Date fechaEntrega, List<String> productos,
-            List<RecepcionProductos> recepcionProductos) {
+    public OrdenCompra(Integer id, Date fechaCreacion, String estado, Date fechaEntrega, List<String> productos,
+            List<RecepcionProductos> RecepcionProductos) {
+        this.id = id;
         this.fechaCreacion = fechaCreacion;
         this.estado = estado;
         this.fechaEntrega = fechaEntrega;
         this.productos = productos;
-        this.recepcionProductos = recepcionProductos;
+        this.RecepcionProductos = RecepcionProductos;
     }
     public Date getFechaCreacion() {
         return fechaCreacion;
@@ -50,10 +52,18 @@ public class OrdenCompra {
         this.productos = productos;
     }
     public List<RecepcionProductos> getRecepcionProductos() {
-        return recepcionProductos;
+        return RecepcionProductos;
     }
-    public void setRecepcionProductos(List<RecepcionProductos> recepcionProductos) {
-        this.recepcionProductos = recepcionProductos;
+    public void setRecepcionProductos(List<RecepcionProductos> RecepcionProductos) {
+        this.RecepcionProductos = RecepcionProductos;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     
