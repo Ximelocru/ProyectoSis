@@ -20,8 +20,9 @@ public class SucursalRepositoryCustom {
     }
 
     public List<Map<String, Object>> obtenerReporteBodegasPorSucursal(String sucursalId) {
-        // Construir el pipeline de agregación usando Document
+       
         List<Document> pipeline = Arrays.asList(
+
             // Match para filtrar la sucursal por ID
             new Document("$match", new Document("_id", sucursalId)),
             
@@ -54,7 +55,6 @@ public class SucursalRepositoryCustom {
                 .append("_id", 0))
         );
 
-        // Ejecutar la consulta usando MongoTemplate
         List<Map<String, Object>> resultado = (List<Map<String, Object>>) (List<?>) mongoTemplate.getDb().getCollection("sucursales")
             .aggregate(pipeline, Map.class)
             .into(new java.util.ArrayList<>());

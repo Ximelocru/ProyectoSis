@@ -5,20 +5,20 @@ import lombok.ToString;
 @ToString
 public class InfoExtraProveedor {
 
-    private Producto producto;
+    private String producto;
     private Integer cantidadExistentes;
 
     public InfoExtraProveedor()
     {;}
     
-    public InfoExtraProveedor(Producto producto, Integer cantidadExistentes) {
+    public InfoExtraProveedor(String producto, Integer cantidadExistentes) {
         this.producto = producto;
         this.cantidadExistentes = cantidadExistentes;
     }
-    public Producto getProducto() {
+    public String getProducto() {
         return producto;
     }
-    public void setProducto(Producto producto) {
+    public void setProducto(String producto) {
         this.producto = producto;
     }
     public Integer getCantidadExistentes() {
