@@ -5,20 +5,20 @@ import lombok.ToString;
 @ToString
 public class DetalleCostoBodega {
 
-    private Double costoUnitarioBodega;
+    private Integer costoUnitarioBodega;
     private Integer cantidadExistencias;
 
     public DetalleCostoBodega()
     {;}
     
-    public DetalleCostoBodega(Double costoUnitarioBodega, Integer cantidadExistencias) {
+    public DetalleCostoBodega(Integer costoUnitarioBodega, Integer cantidadExistencias) {
         this.costoUnitarioBodega = costoUnitarioBodega;
         this.cantidadExistencias = cantidadExistencias;
     }
-    public Double getCostoUnitarioBodega() {
+    public Integer getCostoUnitarioBodega() {
         return costoUnitarioBodega;
     }
-    public void setCostoUnitarioBodega(Double costoUnitarioBodega) {
+    public void setCostoUnitarioBodega(Integer costoUnitarioBodega) {
         this.costoUnitarioBodega = costoUnitarioBodega;
     }
     public Integer getCantidadExistencias() {

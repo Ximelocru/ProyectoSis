@@ -5,24 +5,24 @@ import lombok.ToString;
 @ToString
 public class InfoExtraBodega {
 
-    private Producto idProducto;
+    private String idProducto;
     private Integer cantidad;
-    private Double costoUnitarioCompra;
+    private Integer costoUnitarioCompra;
     private DetalleCostoBodega detalleCostoBodega;
 
     public InfoExtraBodega()
     {;}    
 
-    public InfoExtraBodega(Producto idProducto, Integer cantidad, Double costoUnitarioCompra, DetalleCostoBodega detalleCostoBodega) {
+    public InfoExtraBodega(String idProducto, Integer cantidad, Integer costoUnitarioCompra, DetalleCostoBodega detalleCostoBodega) {
         this.idProducto = idProducto;
         this.cantidad = cantidad;
         this.costoUnitarioCompra = costoUnitarioCompra;
         this.detalleCostoBodega = detalleCostoBodega;
     }
-    public Producto getIdProducto() {
+    public String getIdProducto() {
         return idProducto;
     }
-    public void setIdProducto(Producto idProducto) {
+    public void setIdProducto(String idProducto) {
         this.idProducto = idProducto;
     }
     public Integer getCantidad() {
@@ -31,10 +31,10 @@ public class InfoExtraBodega {
     public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
-    public Double getCostoUnitarioCompra() {
+    public Integer getCostoUnitarioCompra() {
         return costoUnitarioCompra;
     }
-    public void setCostoUnitarioCompra(Double costoUnitarioCompra) {
+    public void setCostoUnitarioCompra(Integer costoUnitarioCompra) {
         this.costoUnitarioCompra = costoUnitarioCompra;
     }
 

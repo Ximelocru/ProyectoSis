@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +15,7 @@ import uniandes.edu.co.SuperAndesNoSQL.modelo.InfoExtraOrden;
 import uniandes.edu.co.SuperAndesNoSQL.modelo.OrdenCompra;
 import uniandes.edu.co.SuperAndesNoSQL.modelo.Sucursal;
 import uniandes.edu.co.SuperAndesNoSQL.repositorios.SucursalRepository;
+import uniandes.edu.co.SuperAndesNoSQL.repositorios.SucursalRepositoryCustom;
 
 @RestController
 @RequestMapping("/sucursales")
@@ -26,6 +26,9 @@ public class SucursalController {
 
     @Autowired
     private SucursalRepository sucursalRepository;
+
+    @Autowired
+    private SucursalRepositoryCustom sucursalRepositoryCustom;
 
     @PostMapping("/{sucursalId}/ordencompra")
     public ResponseEntity<String> agregarOrdenDeCompra(@PathVariable String sucursalId,@RequestBody Map<String, Object> requestBody) {
@@ -73,6 +76,16 @@ public class SucursalController {
         }catch(Exception e){
 
             return new ResponseEntity<>("Error al buscar la Orden de Compra: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/bodegas/{sucursalId}")
+    public ResponseEntity<List<Map<String, Object>>> obtenerReporteBodegas(@PathVariable String sucursalId) {
+        try {
+            List<Map<String, Object>> reporte = sucursalRepositoryCustom.obtenerReporteBodegasPorSucursal(sucursalId);
+            return ResponseEntity.ok(reporte);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body(null);
         }
     }
 
